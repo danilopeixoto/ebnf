@@ -1,0 +1,42 @@
+{
+    "scopeName": "source.ebnf",
+    "name": "EBNF",
+    "fileTypes": ["ebnf"],
+    "patterns": [
+        {
+            "name": "comment.line.character.ebnf",
+            "begin": "\\(\\*",
+            "end": "\\*\\)",
+            "patterns": [
+                {
+                    "match": "."
+                }
+            ]
+        },
+        {
+            "match": "([\\w-]+)(\\s*)(::=)",
+            "captures": {
+                "1": {
+                    "name": "constant.language.ebnf"
+                },
+                "3": {
+                    "name": "none.ebnf"
+                }
+            }
+        },
+        {
+            "name": "entity.name.function.ebnf",
+            "match": "[\\w-]+"
+        },
+        {
+            "name": "string.quoted.single.ebnf",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "match": "."
+                }
+            ]
+        }
+    ]
+}
